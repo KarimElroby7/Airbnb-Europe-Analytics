@@ -61,7 +61,17 @@ Models were evaluated on a test set split **by apartment** (weekday and weekend 
 | Random Forest | 0.73 | 17.4% | 55% |
 | **Gradient Boosting** | **0.74** | **17.6%** | **56%** |
 
-**Classification (price tier for the city):** Budget / Mid-range / Premium accuracy **68%** (chance 33%, only 3.1% Budget-Premium confusions); above / below city median accuracy **81%**.
+**Classification: is the listing above or below its city's median price?** Accuracy **81%** on 10,292 test listings:
+
+| Class | Precision | Recall | F1-score | Support |
+|:--|:-:|:-:|:-:|:-:|
+| Above median | 0.83 | 0.80 | 0.81 | 5,294 |
+| Below median | 0.80 | 0.83 | 0.81 | 4,998 |
+| **Accuracy** | | | **0.81** | 10,292 |
+| Macro avg | 0.81 | 0.81 | 0.81 | 10,292 |
+| Weighted avg | 0.81 | 0.81 | 0.81 | 10,292 |
+
+**Price tier (Budget / Mid-range / Premium within the city):** accuracy **68%** (chance 33%); only 3.1% of listings are confused between Budget and Premium.
 
 Top drivers: closeness to attractions, room type, city, capacity, neighbourhood superhost share, bedrooms.
 
