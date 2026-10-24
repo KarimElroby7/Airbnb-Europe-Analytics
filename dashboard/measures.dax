@@ -1,0 +1,36 @@
+// =====================================================================
+// DAX measures for the Airbnb Europe dashboard
+// Create each one in Power BI: Home > New measure, paste ONE block, Enter.
+// Put them all in the table fact_listings.
+// =====================================================================
+
+// 1) Number of listings
+Listings = COUNTROWS ( fact_listings )
+
+// 2) Median price (the median, not the average: prices are skewed)
+Median Price = MEDIAN ( fact_listings[price_eur] )
+
+// 3) Median price per person
+Median Price per Person =
+MEDIANX ( fact_listings, DIVIDE ( fact_listings[price_eur], fact_listings[person_capacity] ) )
+
+// 4) Share of listings run by superhosts
+Superhost Share =
+DIVIDE ( CALCULATE ( [Listings], fact_listings[host_is_superhost] = TRUE () ), [Listings] )
+
+// 5) Average guest satisfaction (0-100)
+Avg Guest Satisfaction = AVERAGE ( fact_listings[guest_satisfaction] )
+
+// 6) Weekend premium: how much higher the weekend median is than the weekday median
+Weekend Premium % =
+VAR WeekendPrice = CALCULATE ( [Median Price], dim_day_type[is_weekend] = TRUE () )
+VAR WeekdayPrice = CALCULATE ( [Median Price], dim_day_type[is_weekend] = FALSE () )
+RETURN DIVIDE ( WeekendPrice - WeekdayPrice, WeekdayPrice )
+
+// 7) Share of entire homes
+Entire Home Share =
+DIVIDE ( CALCULATE ( [Listings], dim_room_type[room_type_name] = "Entire home/apt" ), [Listings] )
+
+// 8) Share of listings run by professional hosts (5+ listings)
+Professional Host Share =
+DIVIDE ( CALCULATE ( [Listings], dim_host_type[host_type_name] = "Professional" ), [Listings] )

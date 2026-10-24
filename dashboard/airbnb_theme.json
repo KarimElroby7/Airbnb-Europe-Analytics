@@ -1,0 +1,52 @@
+{
+  "name": "Airbnb Market Insights Dark",
+  "dataColors": ["#2ec4f0", "#ff385c", "#ff8a5c", "#a78bfa", "#34d399", "#ffc857", "#e87ba4", "#6250d6"],
+  "background": "#0e1529",
+  "foreground": "#f0efec",
+  "foregroundNeutralSecondary": "#c9d1e6",
+  "foregroundNeutralTertiary": "#8f9bb8",
+  "backgroundLight": "#141d36",
+  "backgroundNeutral": "#1f2a47",
+  "tableAccent": "#ff385c",
+  "good": "#34d399",
+  "neutral": "#ffc857",
+  "bad": "#ff385c",
+  "textClasses": {
+    "callout": {"fontSize": 34, "fontFace": "Segoe UI Semibold", "color": "#ffffff"},
+    "title": {"fontSize": 16, "fontFace": "Segoe UI Semibold", "color": "#ffffff"},
+    "header": {"fontSize": 14, "fontFace": "Segoe UI Semibold", "color": "#ffffff"},
+    "label": {"fontSize": 13, "fontFace": "Segoe UI", "color": "#c9d1e6"}
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{"show": false}],
+        "border": [{"show": false}],
+        "title": [{"show": false}],
+        "visualHeader": [{"show": false}],
+        "dropShadow": [{"show": false}],
+        "categoryAxis": [{"labelColor": {"solid": {"color": "#c9d1e6"}}, "fontSize": 13, "showAxisTitle": false, "gridlineShow": false}],
+        "valueAxis": [{"labelColor": {"solid": {"color": "#8f9bb8"}}, "fontSize": 12, "showAxisTitle": false, "gridlineColor": {"solid": {"color": "#26304d"}}}],
+        "labels": [{"show": true, "color": {"solid": {"color": "#ffffff"}}, "fontSize": 12}],
+        "legend": [{"labelColor": {"solid": {"color": "#c9d1e6"}}, "fontSize": 12}]
+      }
+    },
+    "slicer": {
+      "*": {
+        "header": [{"show": true, "fontColor": {"solid": {"color": "#8f9bb8"}}, "textSize": 9, "fontFamily": "Segoe UI Semibold"}],
+        "items": [{"fontColor": {"solid": {"color": "#ffffff"}}, "background": {"solid": {"color": "#0e1529"}}, "textSize": 12}],
+        "data": [{"mode": "Dropdown"}]
+      }
+    },
+    "tableEx": {
+      "*": {
+        "columnHeaders": [{"fontColor": {"solid": {"color": "#ffffff"}}, "backColor": {"solid": {"color": "#1f2a47"}}, "fontSize": 13}],
+        "values": [{"fontColorPrimary": {"solid": {"color": "#e6eaf5"}}, "backColorPrimary": {"solid": {"color": "#0e1529"}}, "fontColorSecondary": {"solid": {"color": "#e6eaf5"}}, "backColorSecondary": {"solid": {"color": "#121b33"}}, "fontSize": 13}],
+        "total": [{"fontColor": {"solid": {"color": "#ffffff"}}, "backColor": {"solid": {"color": "#1f2a47"}}}]
+      }
+    },
+    "page": {
+      "*": {"outspace": [{"color": {"solid": {"color": "#080c1a"}}}]}
+    }
+  }
+}
